@@ -31,8 +31,8 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span class="main-heading">tweeter</span>
-      <span class="new-tweet">
+      <span class="tweeter-heading">tweeter</span>
+      <span class="write-tweet">
         <div><b>Write</b> a new tweet</div> 
         <a><i class="fa-solid fa-angles-down"></i></a>
       </span>
@@ -55,10 +55,10 @@
       <!-- Tweet section -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form>
+        <form method="POST" action="/tweets/" >
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
-          <div>
+          <div >
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
