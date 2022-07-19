@@ -1,0 +1,55 @@
+.all-tweets {
+  margin-bottom: 400px;
+  
+}
+
+/* For each submitted tweet */
+.all-tweets article {
+  margin: 60px 0;
+  border: 5px solid #545149;
+}
+
+.all-tweets header {
+  display: flex;
+  align-items: center;
+}
+
+.all-tweets img {
+  margin: 15px 5px 15px 15px;
+  width: 60px;
+  display: flex;
+  flex-shrink: 10px;
+}
+
+.all-tweets span.handle {
+  font-weight: bolder;
+  opacity: 0.6;
+  margin-right: 20px;
+  margin-left: auto;
+  margin-right: 1em;
+  
+}
+
+.all-tweets p {
+  font-weight: bolder;
+  border-bottom: 5px solid #545149;
+  padding: 0.1em 1em 1.5em;
+  margin: 1em 0.5em 0.5em 0.5em;
+
+}
+
+.all-tweets footer {
+  font-size: 0.7em;
+  font-weight: bolder;
+  display: flex; 
+  justify-content: space-between;
+  margin: 0 2em 1em 2em;
+}
+
+.all-tweets footer span {
+  color: #4056A1
+}
+
+.all-tweets footer i {
+  padding: 0 3px;
+}
