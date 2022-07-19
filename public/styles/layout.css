@@ -32,8 +32,9 @@ body {
 
 
 main {
-  margin: 120px auto 0;
+  margin: auto;
+  position: relative;
   width: 90%;
-  padding-top: 10px;
+  top: 120px;
   background-color: #f4f1ec;
 }
