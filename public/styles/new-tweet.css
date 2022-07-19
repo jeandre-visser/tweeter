@@ -6,7 +6,7 @@ main textarea {
   color: #545149;
   font-weight: bolder;
   margin-top: 10px;
-  background-color: #f4f1ec;
+  background-color: inherit;
 }
 
 main button {
@@ -23,6 +23,10 @@ label {
 
 .counter {
   font-family: Bungee, sans-serif;
+}
+
+.char-limit-exceeded {
+  color: red;
 }
 
 .new-tweet div {
