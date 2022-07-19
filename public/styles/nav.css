@@ -12,20 +12,20 @@ nav {
 
 
 /*TWEETER text*/
-.main-heading {
+.tweeter-heading {
   font-family: Bungee, sans-serif;
   font-size: 1.5em;
   float: left;
 }
 
 /*Write a new tweet */
-.new-tweet {
+.write-tweet {
   float: right;
   font-size: 1em;
 }
 
 /* Double down arrow */
-.new-tweet i {
+.write-tweet i {
   display: flex;
   justify-content: center;
   margin-top: 0.25em;
