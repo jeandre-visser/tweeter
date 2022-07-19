@@ -15,5 +15,12 @@ $(document).ready(function() {
     // displays the number of characters remaining
     $charCounter.text(charCountRemaining);
     
+    // make text red if going beyond the 140 char count limit
+    if (charCountRemaining < 0) {
+      $charCounter.addClass('char-limit-exceeded');
+
+    } else {
+      $charCounter.removeClass('char-limit-exceeded');
+    }
   })
 });
