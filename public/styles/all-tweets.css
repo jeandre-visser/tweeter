@@ -1,6 +1,5 @@
 .all-tweets {
   margin-bottom: 400px;
-  
 }
 
 /* For each submitted tweet */
@@ -27,7 +26,7 @@
   margin-right: 20px;
   margin-left: auto;
   margin-right: 1em;
-  
+  color: #4056A1;
 }
 
 .all-tweets p {
@@ -52,4 +51,12 @@
 
 .all-tweets footer i {
   padding: 0 3px;
+}
+
+.all-tweets:hover {
+  box-shadow: 6px 5px #4056A156;
+}
+
+.all-tweets footer i:hover {
+  color: #ebab34;
 }
