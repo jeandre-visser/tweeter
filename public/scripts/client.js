@@ -40,7 +40,7 @@ $(document).ready(() => {
     const timeSinceTweet = (Date.now() - tweetData.created_at) / 86400000;
 
     // add timeSinceTweet to footer
-    $footer.text(`${timeSinceTweet} days ago`);
+    $footer.text(`${Math.round(timeSinceTweet)} days ago`);
 
     // Add the icons
     const $icons = $('<span>')
@@ -48,6 +48,7 @@ $(document).ready(() => {
     $icons.append($('<i>').addClass('fa-solid fa-retweet'));
     $icons.append($('<i>').addClass('fa-solid fa-heart'));
 
+    return $tweet;
   }
 
   // Takes in an array of tweet objects and then appends each one to the #tweets-container
