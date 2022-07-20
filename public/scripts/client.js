@@ -36,6 +36,17 @@ $(document).ready(() => {
     // Append the footer to the $tweet
     const $footer = $('<footer>');
 
+    // Determine how much time since the tweet was posted
+    const timeSinceTweet = (Date.now() - tweetData.created_at) / 86400000;
+
+    // add timeSinceTweet to footer
+    $footer.text(`${timeSinceTweet} days ago`);
+
+    // Add the icons
+    const $icons = $('<span>')
+    $icons.append($('<i>').addClass('fas fa-fla'));
+    $icons.append($('<i>').addClass('fa-solid fa-retweet'));
+    $icons.append($('<i>').addClass('fa-solid fa-heart'));
 
   }
 
