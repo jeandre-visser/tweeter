@@ -31,6 +31,7 @@ const createTweetElement = function(tweetData) {
 
 // Takes in an array of tweet objects and then appends each one to the #tweets-container
 const renderTweets = function(tweets) {
+  $('#tweets-container').empty();
   for (const tweet of tweets) {
     $('#tweets-container').append(createTweetElement(tweet))
   }
@@ -41,7 +42,7 @@ const renderTweets = function(tweets) {
 $(document).ready(() => {
 
   // Event listener for submit and prevents its default behaviour
-  $('.new-tweet form').submit(evt => {
+  $('.new-tweet form').submit(function(evt) {
     evt.preventDefault();
 
   // Serialize 
@@ -60,7 +61,8 @@ $(document).ready(() => {
         $.ajax('/tweets', {
         data: $(this).serialize(),
         method: 'POST'
-        });
+        })
+        .then(loadTweets())
       }
   })
 
@@ -74,7 +76,6 @@ $(document).ready(() => {
       .then(tweets => renderTweets(tweets))
     };
 
-    
     loadTweets();
 
 })
