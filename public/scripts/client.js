@@ -44,11 +44,24 @@ $(document).ready(() => {
   $('.new-tweet form').submit(evt => {
     evt.preventDefault();
 
-  // Serialize the form data and send it to the server as a query string
-    $.ajax('/tweets', {
-      data: $(this).serialize(),
-      method: 'POST'
-    });
+  // Serialize 
+
+    const tweetContent = $(this).children('textarea').val();
+      // empty field
+      if (!tweetContent) {
+        alert('Please enter text in order to submit a tweet')
+      
+      // Too much text
+      } else if (tweetContent.length > 140) {
+        alert('Uh oh, your tweet exceeded 140 characters. Too much on your mind!')
+      
+      // otherwise serialize the form data and send it to the server as a query string
+      } else {
+        $.ajax('/tweets', {
+        data: $(this).serialize(),
+        method: 'POST'
+        });
+      }
   })
 
 
