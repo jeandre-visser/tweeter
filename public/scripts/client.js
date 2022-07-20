@@ -30,10 +30,21 @@ $(document).ready(() => {
     // Append header to the tweet
     $tweet.append($header);
 
-    // CAppends tweet text to the $tweet
+    // Appends tweet text to the $tweet
     $header.append($('<p>').text(tweetData.content.text));
 
+    // Append the footer to the $tweet
+    const $footer = $('<footer>');
+
+
   }
+
+  // Takes in an array of tweet objects and then appends each one to the #tweets-container
+  const renderTweets = function(tweets) {
+    for (const tweet of tweets) {
+      $('#tweets-container').append(createTweetElement(tweet))
+    }
+  };
 
 
   // TEST
