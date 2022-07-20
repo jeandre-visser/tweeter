@@ -43,45 +43,27 @@ $(document).ready(() => {
   // Event listener for submit and prevents its default behaviour
   $('.new-tweet form').submit(evt => {
     evt.preventDefault();
-    console.log("data", data)
-  })
 
   // Serialize the form data and send it to the server as a query string
-  $.ajax('/tweets', {
-    data: $(this).serialize(),
-    method: 'POST'
-  });
+    $.ajax('/tweets', {
+      data: $(this).serialize(),
+      method: 'POST'
+    });
+  })
 
 
+  // Fetch tweets from our 8080 server and render them
+    const loadTweets = function() {
+      $.ajax('/tweets', {
+        dataType: 'JSON',
+        method: 'GET'
+      })
+      .then(tweets => renderTweets(tweets))
+    };
 
+    
+    loadTweets();
 
-// TEST
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
-  
-  renderTweets(data);
 })
 
 
