@@ -43,9 +43,14 @@ $(document).ready(() => {
   // Event listener for submit and prevents its default behaviour
   $('.new-tweet form').submit(evt => {
     evt.preventDefault();
+    console.log("data", data)
   })
 
-
+  // Serialize the form data and send it to the server as a query string
+  $.ajax('/tweets', {
+    data: $(this).serialize(),
+    method: 'POST'
+  });
 
 
 
