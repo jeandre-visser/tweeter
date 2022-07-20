@@ -5,7 +5,7 @@ const createTweetElement = function(tweetData) {
   // Tweet article element that gets returned
   const $tweet = $('<article>').addClass('tweet');
   
-  const timeSinceTweet = (Date.now() - tweetData.created_at) / 86400000;
+  const timeSinceTweet = timeago.format(new Date());
 
 // Template literal, the tweets inner HTML
   const htmlTemplate = `
@@ -16,7 +16,7 @@ const createTweetElement = function(tweetData) {
     </header>
     <p>${tweetData.content.text}</p>
     <footer>
-      ${Math.round(timeSinceTweet)} days ago
+      ${timeSinceTweet} 
       <span>
         <i class="fa-solid fa-flag"></i>
         <i class="fa-solid fa-retweet"></i>
