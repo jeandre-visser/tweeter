@@ -7,49 +7,32 @@
 // WHEN DOM is loaded and ready
 $(document).ready(() => {
 
-  // takes in a tweet object and is responsible for returning a tweet <article> element containing the entire HTML structure of the tweet
-  const createTweetElement = tweetData => {
-    
-    // The returned tweet <article>
+// Template literal
+  const createTweetElement = function(tweetData) {
+
     const $tweet = $('<article>').addClass('tweet');
-    
-    // Create header
-    const $header = $('<header>');
-
-    // Appends image
-    const $img = $('<img>').attr({
-      src: tweetData.user.avatars,
-      alt: `${tweetData.user.handle}-avatar`
-    });
-
-    // Append the img, name, and handle to the header
-    $header.append($img);
-    $header.append($('<span>').text(tweetData.user.name));
-    $header.append($('<span>').text(tweetData.user.handle));
-
-    // Append header to the tweet
-    $tweet.append($header);
-
-    // Appends tweet text to the $tweet
-    $header.append($('<p>').text(tweetData.content.text));
-
-    // Append the footer to the $tweet
-    const $footer = $('<footer>');
-
-    // Determine how much time since the tweet was posted
     const timeSinceTweet = (Date.now() - tweetData.created_at) / 86400000;
 
-    // add timeSinceTweet to footer
-    $footer.text(`${Math.round(timeSinceTweet)} days ago`);
-
-    // Add the icons
-    const $icons = $('<span>')
-    $icons.append($('<i>').addClass('fas fa-fla'));
-    $icons.append($('<i>').addClass('fa-solid fa-retweet'));
-    $icons.append($('<i>').addClass('fa-solid fa-heart'));
-
-    return $tweet;
+    const htmlTemplate = `
+      <header>
+        <img src=${tweetData.user.avatars} alt="${tweetData.user.handle}-avatar">
+        <span>${tweetData.user.name}</span>
+        <span>${tweetData.user.handle}</span>
+      </header>
+      <p>${tweetData.content.text}</p>
+      <footer>
+        ${Math.round(timeSinceTweet)} days ago
+        <span>
+          <i class="fa-solid fa-flag"></i>
+          <i class="fa-solid fa-retweet"></i>
+          <i class="fa-solid fa-heart"></i>
+        </span>
+      </footer>
+    `
+    // Input the inner HTML into the tweet and return it
+    return $tweet.html(htmlTemplate);
   }
+
 
   // Takes in an array of tweet objects and then appends each one to the #tweets-container
   const renderTweets = function(tweets) {
