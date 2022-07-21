@@ -5,13 +5,13 @@ $(document).ready(() => {
 
     // conditions for whether at top of page or not, determines if navbar or scroll up button is shown
 
-    if ($(this).scrollTop() < 90) {
-      $('nav').fadeIn(200);
-      $('.scroll-up').fadeOut(200);
+    if ($(this).scrollTop() === 0) {
+      $('nav').fadeIn(100);
+      $('.scroll-up').fadeOut(100);
 
     } else {
-      $('nav').fadeOut(100);
-      $('.scroll-up').fadeIn(200);
+      $('nav').fadeOut(200);
+      $('.scroll-up').fadeIn(100);
     }
   })
 
