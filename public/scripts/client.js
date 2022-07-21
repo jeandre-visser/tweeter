@@ -1,7 +1,8 @@
 // Functions 
 
-// Escapes unsafe text converts into safe re-encoded text
-const escape = function(str) {
+// escapes unsafe text converts into safe re-encoded text
+// tried to use "escape" but says it is deprecated
+const escapes = function(str) {
   const div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -18,11 +19,11 @@ const createTweetElement = function(tweetData) {
 // Template literal, the tweets inner HTML
   const htmlTemplate = `
     <header>
-      <img src=${escape(tweetData.user.avatars)} alt="${escape(tweetData.user.handle)}-avatar">
-      <span class="name" >${escape(tweetData.user.name)}</span>
-      <span class="handle" >${escape(tweetData.user.handle)}</span>
+      <img src=${escapes(tweetData.user.avatars)} alt="${escapes(tweetData.user.handle)}-avatar">
+      <span class="name" >${escapes(tweetData.user.name)}</span>
+      <span class="handle" >${escapes(tweetData.user.handle)}</span>
     </header>
-    <p>${escape(tweetData.content.text)}</p>
+    <p>${escapes(tweetData.content.text)}</p>
     <footer>
       ${timeSinceTweet} 
       <span>
