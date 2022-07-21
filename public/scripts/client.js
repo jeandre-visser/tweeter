@@ -73,7 +73,7 @@ $(document).ready(() => {
 
 
     const $textarea = $(this).children('textarea');
-    const tweetContent = $textarea.val();
+    const tweetContent = $textarea.val().trim();
     const $errorMessage = $(this).children('h4');
 
 
@@ -99,10 +99,12 @@ $(document).ready(() => {
         })
         .then(loadTweets())
         .catch(error => console.log(error))
+      
+        // clear the textarea after submission
+      $textarea.val('');
       }
 
-      // clear the textarea after submission
-      $textarea.val('');
+
   })
 })
 
