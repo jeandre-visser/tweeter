@@ -31,7 +31,7 @@ const createTweetElement = function(tweetData) {
         <i class="fa-solid fa-heart"></i>
       </span>
     </footer>
-  `
+  `;
   // Input the inner HTML into the tweet and return it
   return $tweet.html(htmlTemplate);
 };
@@ -39,6 +39,7 @@ const createTweetElement = function(tweetData) {
 
 // Takes in an array of tweet objects and then appends each one to the #tweets-container
 const renderTweets = function(tweets) {
+  
   $('#tweets-container').empty();
   for (const tweet of tweets) {
     $('#tweets-container').prepend(createTweetElement(tweet))
@@ -52,7 +53,7 @@ const renderTweets = function(tweets) {
       method: 'GET'
     })
     .then(tweets => renderTweets(tweets))
-    .catch(error => console.log(error))
+    .catch(error => console.error(error))
   };
 
 // WHEN DOM is loaded and ready
@@ -60,7 +61,7 @@ $(document).ready(() => {
 
   // then load tweets
   loadTweets();
-
+  
   // displays and hides new tweet section when the write a new tweet arrow is clicked"
   $('nav i').on('click', () => {
     $('.new-tweet').slideToggle();
@@ -78,7 +79,7 @@ $(document).ready(() => {
 
 
 
-    // hide the error message
+    // hide the error message when there is no error
     $errorMessage.hide();
     
     // show/hide error message if there is/isn't an error
@@ -98,7 +99,7 @@ $(document).ready(() => {
         method: 'POST'
         })
         .then(loadTweets())
-        .catch(error => console.log(error))
+        .catch(error => console.error(error))
         
         // clear the textarea and reset counter to 140 after submission
         $textarea.val('');
