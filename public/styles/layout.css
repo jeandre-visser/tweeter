@@ -59,3 +59,16 @@ main {
 .scroll-up:active {
   background-color: #ebab34;
 }
+
+/* Desktop layout */
+@media only screen and (min-width: 1024px) {
+  .user-profile {
+    float: left;
+    width: 40%;
+  }
+
+  main {
+    float: right;
+    width: 60%;
+  }
+}
