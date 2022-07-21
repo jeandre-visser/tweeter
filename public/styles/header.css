@@ -24,3 +24,10 @@
 .user-profile span {
   font-weight: lighter;
 }
+
+.user-profile img {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
