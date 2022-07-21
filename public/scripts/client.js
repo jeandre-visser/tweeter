@@ -58,7 +58,7 @@ const renderTweets = function(tweets) {
 // WHEN DOM is loaded and ready
 $(document).ready(() => {
 
-  
+  // then load tweets
   loadTweets();
 
   // displays and hides new tweet section when the write a new tweet arrow is clicked"
