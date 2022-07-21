@@ -76,9 +76,11 @@ main {
 
   .new-tweet {
     margin-top: 0;
+    margin-bottom: 50px;
   }
 
-  #tweets-container {
+  .tweet {
     margin-top: 0;
   }
+  
 }
