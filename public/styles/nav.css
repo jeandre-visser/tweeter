@@ -28,10 +28,12 @@ nav {
 .write-tweet i {
   display: flex;
   justify-content: center;
-  margin-top: 0.25em;
+  padding-top: 0.25em;
+  padding-bottom: 1em;
   color: #ebab34;
 }
 
 .write-tweet i:hover {
-  color:#e1cba1;
+  color:red;
+  font-size: larger;
 }
