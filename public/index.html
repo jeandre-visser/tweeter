@@ -62,11 +62,11 @@
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets/" >
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
           <h4>
             <i class="fa-solid fa-triangle-exclamation"></i>
-            ERROR MESSAGE
+            <span class="error-message"></span>
           </h4>
+          <textarea name="text" id="tweet-text"></textarea>
           <div>
             <button id="btn" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
@@ -76,6 +76,10 @@
 
       <!--All Submitted Tweets Section (Dynamically generated)-->
       <section id="tweets-container"></section>
+
+      <button class="scroll-up">
+        <i class="fa-solid fa-angles-up"></i>
+      </button>
 
     </main>
   </body>
