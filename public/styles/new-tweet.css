@@ -5,8 +5,10 @@ main textarea {
   border-bottom: 5px solid #545149;
   color: #545149;
   font-weight: bolder;
+  font-size: smaller;
   margin-top: 10px;
   background-color: inherit;
+  padding: 10px;
 }
 
 main button {
@@ -35,3 +37,17 @@ label {
   justify-content: space-between;
 }
 
+.new-tweet i {
+  color: red;
+  padding: 5px 15px;;
+}
+
+/* Error message */
+.new-tweet h4 {
+  background-color: #FFD2D1;
+  color: red;
+  border-radius: 4px;
+  border: 2px solid red;
+  padding-right: 15px;
+  width: fit-content;
+}
