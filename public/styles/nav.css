@@ -31,3 +31,8 @@ nav {
   margin-top: 0.25em;
   color: #ebab34;
 }
+
+.write-tweet i {
+  color:#ebab34;
+  transition: color 0.5s ease;
+}
