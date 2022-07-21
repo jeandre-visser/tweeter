@@ -78,7 +78,7 @@ $(document).ready(() => {
     const $errorMessage = $(this).children('h4');
 
     // hide the error message
-    $errorMessage.slideUp(100);
+    $errorMessage.slideUp(50);
     
     // show/hide error message if there is/isn't an error
       if (!tweetContent) {
