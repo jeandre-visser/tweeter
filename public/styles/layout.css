@@ -73,4 +73,12 @@ main {
     width: 50%;
     margin: 10vh 5% 0;
   }
+
+  .new-tweet {
+    margin-top: 0;
+  }
+
+  #tweets-container {
+    margin-top: 0;
+  }
 }
