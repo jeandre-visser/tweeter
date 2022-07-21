@@ -39,7 +39,7 @@ main {
   background-color: #f4f1ec;
 }
 
-
+/* For scroll up button */
 .scroll-up {
   height: 60px;
   width: 60px;
@@ -50,6 +50,11 @@ main {
   right: 3vw;
   outline: none;
   border: 0;
+}
+
+.scroll-up i {
+  font-size: 1em;
+  color: #f4f1ec;
 }
 
 .scroll-up:hover {
