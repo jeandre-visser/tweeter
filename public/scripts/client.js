@@ -1,5 +1,13 @@
 // Functions 
 
+// Escapes unsafe text converts into safe re-encoded text
+const escape = function(str) {
+  const div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
+
 // Takes a tweet object and returns article element with the composed tweet
 const createTweetElement = function(tweetData) {
   // Tweet article element that gets returned
@@ -10,11 +18,11 @@ const createTweetElement = function(tweetData) {
 // Template literal, the tweets inner HTML
   const htmlTemplate = `
     <header>
-      <img src=${tweetData.user.avatars} alt="${tweetData.user.handle}-avatar">
-      <span class="name" >${tweetData.user.name}</span>
-      <span class="handle" >${tweetData.user.handle}</span>
+      <img src=${escape(tweetData.user.avatars)} alt="${escape(tweetData.user.handle)}-avatar">
+      <span class="name" >${escape(tweetData.user.name)}</span>
+      <span class="handle" >${escape(tweetData.user.handle)}</span>
     </header>
-    <p>${tweetData.content.text}</p>
+    <p>${escape(tweetData.content.text)}</p>
     <footer>
       ${timeSinceTweet} 
       <span>
@@ -33,17 +41,30 @@ const createTweetElement = function(tweetData) {
 const renderTweets = function(tweets) {
   $('#tweets-container').empty();
   for (const tweet of tweets) {
-    $('#tweets-container').append(createTweetElement(tweet))
+    $('#tweets-container').prepend(createTweetElement(tweet))
   }
 };
 
+  // Fetch tweets from our 8080 server and render them
+  const loadTweets = function() {
+    $.ajax('/tweets', {
+      dataType: 'JSON',
+      method: 'GET'
+    })
+    .then(tweets => renderTweets(tweets))
+    .catch(error => console.log(error))
+  };
 
 // WHEN DOM is loaded and ready
 $(document).ready(() => {
 
-  // Event listener for submit and prevents its default behaviour
+  
+  loadTweets();
+
+  // Event listener for submit and prevents its default behavior
   $('.new-tweet form').submit(function(evt) {
     evt.preventDefault();
+
 
   // Serialize 
 
@@ -63,21 +84,9 @@ $(document).ready(() => {
         method: 'POST'
         })
         .then(loadTweets())
+        .catch(error => console.log(error))
       }
   })
-
-
-  // Fetch tweets from our 8080 server and render them
-    const loadTweets = function() {
-      $.ajax('/tweets', {
-        dataType: 'JSON',
-        method: 'GET'
-      })
-      .then(tweets => renderTweets(tweets))
-    };
-
-    loadTweets();
-
 })
 
 
