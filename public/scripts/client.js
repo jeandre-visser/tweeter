@@ -61,6 +61,12 @@ $(document).ready(() => {
   
   loadTweets();
 
+  // displays and hides new tweet section when the write a new tweet arrow is clicked"
+  $('nav i').on('click', () => {
+    $('.new-tweet').slideToggle();
+    $('.new-tweet textarea').focus();
+  });
+
   // Event listener for submit and prevents its default behavior
   $('.new-tweet form').submit(function(evt) {
     evt.preventDefault();
