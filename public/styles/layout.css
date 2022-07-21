@@ -54,7 +54,6 @@ main {
 
 .scroll-up:hover {
   background-color: #e3ba6d;
-  transition: background-color 0.5s ease;
 }
 
 .scroll-up:active {
