@@ -99,9 +99,10 @@ $(document).ready(() => {
         })
         .then(loadTweets())
         .catch(error => console.log(error))
-      
-        // clear the textarea after submission
-      $textarea.val('');
+        
+        // clear the textarea and reset counter to 140 after submission
+        $textarea.val('');
+        $('.counter').text('140');
       }
 
 
