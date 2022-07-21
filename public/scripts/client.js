@@ -75,13 +75,20 @@ $(document).ready(() => {
   // Serialize 
 
     const tweetContent = $(this).children('textarea').val();
-      // empty field
+    const $errorMessage = $(this).children('h4');
+
+    // hide the error message
+    $errorMessage.slideUp(100);
+    
+    // show/hide error message if there is/isn't an error
       if (!tweetContent) {
-        alert('Please enter text in order to submit a tweet')
-      
+        $('.error-message').text('Please do not leave the tweet field blank')
+        $errorMessage.slideDown(200);
+
       // Too much text
       } else if (tweetContent.length > 140) {
-        alert('Uh oh, your tweet exceeded 140 characters. Too much on your mind!')
+        $('.error-message').text('Please do not exceed the 140 character limit')
+        $errorMessage.slideDown(200);
       
       // otherwise serialize the form data and send it to the server as a query string
       } else {
