@@ -72,13 +72,14 @@ $(document).ready(() => {
     evt.preventDefault();
 
 
-  // Serialize 
-
-    const tweetContent = $(this).children('textarea').val();
+    const $textarea = $(this).children('textarea');
+    const tweetContent = $textarea.val();
     const $errorMessage = $(this).children('h4');
 
+
+
     // hide the error message
-    $errorMessage.slideUp(50);
+    $errorMessage.hide();
     
     // show/hide error message if there is/isn't an error
       if (!tweetContent) {
@@ -99,6 +100,9 @@ $(document).ready(() => {
         .then(loadTweets())
         .catch(error => console.log(error))
       }
+
+      // clear the textarea after submission
+      $textarea.val('');
   })
 })
 
