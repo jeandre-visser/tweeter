@@ -33,6 +33,5 @@ nav {
 }
 
 .write-tweet i:hover {
-  color:#ebab34;
-  transition: color 0.5s ease;
+  color:#e1cba1;
 }
