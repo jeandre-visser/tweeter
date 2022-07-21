@@ -18,5 +18,7 @@ $(document).ready(() => {
   // when scroll-up button is pressed, page goes back to top and focuses on the new-tweet form
   $('.scroll-up').click(() => {
     $(window).scrollTop(0)
+    $('.new-tweet').slideDown();
+    $('.new-tweet textarea').focus();
   })
 })
