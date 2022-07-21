@@ -39,32 +39,6 @@ main {
   background-color: #f4f1ec;
 }
 
-/* For scroll up button */
-.scroll-up {
-  height: 60px;
-  width: 60px;
-  border-radius: 30px;
-  background-color: #ebab34;
-  position: fixed;
-  bottom: 5vh;
-  right: 3vw;
-  outline: none;
-  border: 0;
-}
-
-.scroll-up i {
-  font-size: 1em;
-  color: #f4f1ec;
-}
-
-.scroll-up:hover {
-  background-color: #e3ba6d;
-}
-
-.scroll-up:active {
-  background-color: #ebab34;
-}
-
 /* Desktop layout */
 @media only screen and (min-width: 1024px) {
   .user-profile {
