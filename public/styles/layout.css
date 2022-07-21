@@ -38,3 +38,25 @@ main {
   top: 120px;
   background-color: #f4f1ec;
 }
+
+
+.scroll-up {
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  background-color: #ebab34;
+  position: fixed;
+  bottom: 5vh;
+  right: 3vw;
+  outline: none;
+  border: 0;
+}
+
+.scroll-up:hover {
+  background-color: #e3ba6d;
+  transition: background-color 0.5s ease;
+}
+
+.scroll-up:active {
+  background-color: #ebab34;
+}
