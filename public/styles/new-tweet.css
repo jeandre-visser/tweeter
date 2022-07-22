@@ -55,7 +55,7 @@ label {
   border: 2px solid red;
   padding-right: 15px;
   width: fit-content;
-  font-size: 3vw;
+  font-size: clamp(16px, 3vw, 32px);
 }
 
 .new-tweet button:hover {
