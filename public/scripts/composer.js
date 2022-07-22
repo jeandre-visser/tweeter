@@ -13,12 +13,12 @@ $(document).ready(() => {
       $('nav').fadeOut(200);
       $('.scroll-up').fadeIn(100);
     }
-  })
+  });
 
   // when scroll-up button is pressed, page goes back to top and focuses on the new-tweet form
   $('.scroll-up').click(() => {
-    $(window).scrollTop(0)
+    $(window).scrollTop(0);
     $('.new-tweet').slideDown();
     $('.new-tweet textarea').focus();
-  })
-})
+  });
+});
