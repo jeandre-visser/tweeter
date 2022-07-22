@@ -1,4 +1,4 @@
-// Functions 
+// Functions
 
 // escapes unsafe text converts into safe re-encoded text
 // tried to use "escape" but says it is deprecated
@@ -6,7 +6,7 @@ const escapes = function(str) {
   const div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
 
 // Takes a tweet object and returns article element with the composed tweet
@@ -16,7 +16,7 @@ const createTweetElement = function(tweetData) {
 
   const $timeSinceTweet = timeago.format(tweetData.created_at);
 
-// Template literal, the tweets inner HTML
+  // Template literal, the tweets inner HTML
   const htmlTemplate = `
     <header>
       <img src=${escapes(tweetData.user.avatars)} alt="${escapes(tweetData.user.handle)}-avatar">
@@ -43,19 +43,19 @@ const renderTweets = function(tweets) {
   
   $('#tweets-container').empty();
   for (const tweet of tweets) {
-    $('#tweets-container').prepend(createTweetElement(tweet))
+    $('#tweets-container').prepend(createTweetElement(tweet));
   }
 };
 
-  // Fetch tweets from our 8080 server and render them
-  const loadTweets = function() {
-    $.ajax('/tweets', {
-      dataType: 'JSON',
-      method: 'GET'
-    })
+// Fetch tweets from our 8080 server and render them
+const loadTweets = function() {
+  $.ajax('/tweets', {
+    dataType: 'JSON',
+    method: 'GET'
+  })
     .then(tweets => renderTweets(tweets))
-    .catch(error => console.log(error))
-  };
+    .catch(error => console.log(error));
+};
 
 // WHEN DOM is loaded and ready
 $(document).ready(() => {
@@ -84,31 +84,29 @@ $(document).ready(() => {
     $errorMessage.hide();
     
     // show/hide error message if there is/isn't an error
-      if (!tweetContent) {
-        $('.error-message').text('Please do not leave the tweet field blank')
-        $errorMessage.slideDown(200);
+    if (!tweetContent) {
+      $('.error-message').text('Please do not leave the tweet field blank');
+      $errorMessage.slideDown(200);
 
-      // Too much text
-      } else if (tweetContent.length > 140) {
-        $('.error-message').text('Please do not exceed the 140 character limit')
-        $errorMessage.slideDown(200);
+    // Too much text
+    } else if (tweetContent.length > 140) {
+      $('.error-message').text('Please do not exceed the 140 character limit');
+      $errorMessage.slideDown(200);
       
       // otherwise serialize the form data and send it to the server as a query string
-      } else {
-        $.ajax('/tweets', {
+    } else {
+      $.ajax('/tweets', {
         data: $(this).serialize(),
         method: 'POST'
-        })
+      })
         .then(loadTweets())
-        .catch(error => console.log(error))
+        .catch(error => console.log(error));
         
-        // clear the textarea and reset counter to 140 after submission
-        $textarea.val('');
-        $('.counter').text('140');
-      }
-
-
-  })
-})
+      // clear the textarea and reset counter to 140 after submission
+      $textarea.val('');
+      $('.counter').text('140');
+    }
+  });
+});
 
 
