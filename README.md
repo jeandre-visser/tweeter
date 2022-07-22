@@ -2,9 +2,21 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
+You can:
+- Compose your own tweets
+- Read tweets from others
+
+You cannot: 
+- Submit empty tweets
+- Submit tweets over 140 characters
+
 ## Quick Glimpse
 !["Screenshot of Desktop Layout"](https://github.com/jeandre-visser/tweeter/blob/master/public/images/desktop-layout.png)
+
 !["Screenshot of Tablet Layout"](https://github.com/jeandre-visser/tweeter/blob/master/public/images/tablet-layout.png)
+
+!["Screenshot of Tweet box on Desktop"](https://github.com/jeandre-visser/tweeter/blob/master/public/images/desktop-compose-tweet.png)
+
 !["Screenshot of Mobile Layout"](https://github.com/jeandre-visser/tweeter/blob/master/public/images/mobile-layout.png)
 
 ## Technology
