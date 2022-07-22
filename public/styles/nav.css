@@ -37,3 +37,7 @@ nav {
   color:red;
   font-size: larger;
 }
+
+.write-tweet i:active {
+  font-size: 24px;
+}
