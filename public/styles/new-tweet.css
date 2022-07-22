@@ -55,6 +55,7 @@ label {
   border: 2px solid red;
   padding-right: 15px;
   width: fit-content;
+  font-size: 3vw;
 }
 
 .new-tweet button:hover {
@@ -63,4 +64,11 @@ label {
 
 .new-tweet button:active {
   border: 4px solid #4056A1;
+}
+
+/* Mobile Layout */
+@media only screen and (max-width: 624px) {
+  h4 {
+    min-width: 320px;
+  }
 }
