@@ -54,7 +54,7 @@ const renderTweets = function(tweets) {
       method: 'GET'
     })
     .then(tweets => renderTweets(tweets))
-    .catch(error => console.error(error))
+    .catch(error => console.log(error))
   };
 
 // WHEN DOM is loaded and ready
@@ -100,7 +100,7 @@ $(document).ready(() => {
         method: 'POST'
         })
         .then(loadTweets())
-        .catch(error => console.error(error))
+        .catch(error => console.log(error))
         
         // clear the textarea and reset counter to 140 after submission
         $textarea.val('');
