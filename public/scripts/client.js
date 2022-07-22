@@ -13,8 +13,8 @@ const escapes = function(str) {
 const createTweetElement = function(tweetData) {
   // Tweet article element that gets returned
   const $tweet = $('<article>').addClass('tweet');
-  
-  const timeSinceTweet = timeago.format(new Date());
+
+  const $timeSinceTweet = timeago.format(tweetData.created_at);
 
 // Template literal, the tweets inner HTML
   const htmlTemplate = `
@@ -25,7 +25,7 @@ const createTweetElement = function(tweetData) {
     </header>
     <p>${escapes(tweetData.content.text)}</p>
     <footer>
-      ${timeSinceTweet} 
+      ${$timeSinceTweet} 
       <span>
         <i class="fa-solid fa-flag"></i>
         <i class="fa-solid fa-retweet"></i>
