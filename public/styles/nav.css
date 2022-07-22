@@ -41,3 +41,18 @@ nav {
 .write-tweet i:active {
   font-size: 24px;
 }
+
+/* Mobile Layout */
+@media only screen and (max-width: 624px) {
+  nav {
+    min-width: 320px;
+  }
+  
+  .write-tweet div {
+    display: none;
+  }
+  
+  .write-tweet i {
+    font-size: 2rem;
+  }
+}
